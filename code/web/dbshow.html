@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>员工数据库</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body style="padding:30px">
+    <div id="head-buttons">
+        <button class="btn btn-info" id="new" data-toggle="modal" data-target="#myModal">新增</button>
+        <button class="btn btn-info delete">删除</button>
+        <button class="btn btn-info" onclick=modify()>编辑</button>
+        <button class="btn btn-info" onclick=search()>查询</button>
+        <input class="form-inline" placeholder="按工号查询">
+        <input class="form-inline" placeholder="按姓名查询">
+    </div>
+
+    <!-- 声明定义模态框组件 -->
+    <div class="modal" id="myModal"  data-backdrop="static">
+        <!-- 窗口声明 -->
+        <div class="modal-dialog">
+
+            <!-- 内容声明 -->
+            <div class="modal-content">
+                <!-- 1.框的标题 -->
+                <div class="modal-header">
+                    
+                    <button class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                    <h4>添加新员工</h4>
+                </div>
+                <!-- 2.框内信息 -->
+                <div class="modal-body" id="newInfo">请输入员工信息：
+                    <br><br>
+                    <p>工号：<input type="text" id="wid" placeholder="请输入工号..."></p>
+                    <p>姓名：<input type="text" id="name" placeholder="请输入姓名..."></p>
+                    <p>性别：<input type="text" id="sex" placeholder="请输入性别..."></p>
+                    <p>密码：<input type="password" id="password" placeholder="请输入密码..."></p>
+                    <p>年龄：<input type="text" id="age" placeholder="请输入年龄..."></p>
+                    <p>生日：<input type="text" id="birthday" placeholder="请输入出生日期..."></p>
+                </div>
+                
+                <!-- 3.框的按钮 -->
+                <div class="modal-footer">
+                    <button class="btn btn-info" onclick="insert(this)" data-dismiss="modal" id="insert">确定</button>
+                    <button class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-striped">
+        <!-- <caption>Employee Database</caption> -->
+        <thead>
+
+            <tr>
+                <th>序号</th>
+                <th>工号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>密码</th>
+                <th>年龄</th>
+                <th>出生日期</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" class="check"></td>
+                <td>1001</td>
+                <td>张三</td>
+                <td>女</td>
+                <td>1234</td>
+                <td>29</td>
+                <td>1991-1-1</td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" class="check"></td>
+                <td>1002</td>
+                <td>李四</td>
+                <td>男</td>
+                <td>1234</td>
+                <td>28</td>
+                <td>1992-2-2</td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" class="check"></td>
+                <td>1003</td>
+                <td>王五</td>
+                <td>女</td>
+                <td>1234</td>
+                <td>27</td>
+                <td>1993-3-3</td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" class="check"></td>
+                <td>1004</td>
+                <td>赵六</td>
+                <td>女</td>
+                <td>1234</td>
+                <td>26</td>
+                <td>1994-4-4</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/code.js"></script>
+</html>
